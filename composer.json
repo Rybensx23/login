@@ -1,6 +1,6 @@
 {
-    "name": "mindef/base",
-    "description": "Proyecto MVC demo",
+    "name": "mindef/login",
+    "description": "iniciando los login",
     "type": "project",
     "config": {
         "platform-check": false
