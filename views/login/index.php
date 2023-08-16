@@ -4,14 +4,17 @@
         <div class="row mb-3">
             <div class="col">
                 <label for="usu_catalogo" class="form-label">Catalogo</label>
-                <input type="number" class="form-control" id="usu_catalogo">
+                <input type="number" name="usu_catalogo" class="form-control" id="usu_catalogo">
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
                 <label for="usu_password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="usu_password">
+                <input type="password" name="password" class="form-control" id="usu_password">
             </div>
+        </div>
+        <div class="d-grid">
+            <button class="btn btn-primary" type="submit">Iniciar sesion</button>
         </div>
     </form>
     <div class="mt-3">
