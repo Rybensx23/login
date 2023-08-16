@@ -10,7 +10,7 @@
         <div class="row mb-3">
             <div class="col">
                 <label for="usu_password" class="form-label">Contraseña</label>
-                <input type="password" name="password" class="form-control" id="usu_password">
+                <input type="password" name="usu_password" class="form-control" id="usu_password">
             </div>
         </div>
         <div class="d-grid">
@@ -20,5 +20,6 @@
     <div class="mt-3">
         <p class="mb-0 text-center">¿No tiene una cuenta?<a href="/login/reginstro" class="text-primary fw-bold ms-2">Registrarse</a></p>
     </div>
-    <script src="<?= asset('./buil/js/login/index.js') ?>"></script>
+    <script src="<?= asset('./build/js/login/index.js') ?>"></script>
+    
 </div>
