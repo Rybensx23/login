@@ -8,7 +8,11 @@ use Model\Usuario;
 class LoginController {
 
     public static function index(Router $router) {
-        $router->render('login/index', []);
+        if ($_SESSION['auth_user'] == "") {
+            $router->render('login/index', []);
+        } else {
+            $router->render('menu/index', []);
+        }
     }
 
     public static function loginAPI() {
@@ -19,14 +23,17 @@ class LoginController {
         try {
             if (is_array($usuarioRegistrado)) {
                 $verificacion = password_verify($password, $usuarioRegistrado['usu_password']);
-                $nombre = $usuarioRegistrado["usu_nombre"];                
+                $nombre = $usuarioRegistrado["usu_nombre"];
+                
                 if ($verificacion) {
                     session_start();
                     $_SESSION['auth_user'] = $catalogo;
 
                     echo json_encode([
                         'codigo' => 1,
-                        'mensaje' => "Sesión iniciada correctamente. Bienvenido $nombre"
+                        'mensaje' => "Sesión iniciada correctamente. Bienvenido $nombre",
+                        'redireccion' => '/login/menu'
+                        
                     ]);
                 } else {
                     echo json_encode([
@@ -39,7 +46,6 @@ class LoginController {
                     'codigo' => 2,
                     'mensaje' => 'Usuario no encontrado'
                 ]);
-
             }
         } catch (\Exception $e) {
             echo json_encode([
@@ -48,8 +54,5 @@ class LoginController {
                 'mensaje' => 'Usuario no encontrado'
             ]);
         }
-
-
     }
-    
 }

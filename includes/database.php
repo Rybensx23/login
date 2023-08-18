@@ -19,6 +19,8 @@ try {
 
         "codigo" => 5,
     ]);
-    // header('Location: /');
-    // exit;
+    header('Location: /');
+    exit;
 }
+
+
